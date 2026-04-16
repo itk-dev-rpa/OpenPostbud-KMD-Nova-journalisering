@@ -14,7 +14,7 @@ from robot_framework import config
 from robot_framework.sub_process import mail_process, nova_process, open_postbud_process
 
 
-task_count = 0
+task_count = 0  # pylint: disable=invalid-name
 
 
 def process(orchestrator_connection: OrchestratorConnection) -> None:
@@ -38,12 +38,12 @@ def process(orchestrator_connection: OrchestratorConnection) -> None:
         handle_mail_request(mail, orchestrator_connection, graph_access, op_headers, op_domain)
 
     # Handle queue
-    global task_count
+    global task_count  # pylint: disable=global-statement
     while task_count < config.MAX_TASK_COUNT and (queue_element := orchestrator_connection.get_next_queue_element(config.QUEUE_NAME)):
         task_count += 1
         letter_id = queue_element.reference.split(":")[1]
 
-        json_data =json.loads(queue_element.data)
+        json_data = json.loads(queue_element.data)
         nova_params = mail_process.NovaParams(**json_data["nova_params"])
         shipment_name = json_data["shipment_name"]
 

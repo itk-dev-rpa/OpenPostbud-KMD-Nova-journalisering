@@ -5,7 +5,6 @@ import json
 
 from bs4 import BeautifulSoup
 from itk_dev_shared_components.graph.authentication import GraphAccess
-from itk_dev_shared_components.graph import authentication as graph_authentication
 from itk_dev_shared_components.graph import mail as graph_mail
 from itk_dev_shared_components.graph.mail import Email
 from itk_dev_shared_components.smtp import smtp_util
@@ -125,7 +124,7 @@ def send_rejection(recipient: str, shipment_id: str):
     )
 
     smtp_util.send_email(
-        receiver= recipient,
+        receiver=recipient,
         sender=config.STATUS_SENDER,
         subject="Journaliseringsjob afvist",
         body=body,
@@ -144,7 +143,7 @@ def send_confirmation(recipient: str, shipment_id: str, letter_count: int):
     )
 
     smtp_util.send_email(
-        receiver= recipient,
+        receiver=recipient,
         sender=config.STATUS_SENDER,
         subject="Journaliseringsjob modtaget",
         body=body,

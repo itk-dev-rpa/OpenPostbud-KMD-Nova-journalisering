@@ -107,4 +107,3 @@ def attach_letter_to_case(case: NovaCase, letter_pdf: bytes, letter_title: str, 
     )
 
     nova_documents.attach_document_to_case(case.uuid, doc, nova_access)
-
