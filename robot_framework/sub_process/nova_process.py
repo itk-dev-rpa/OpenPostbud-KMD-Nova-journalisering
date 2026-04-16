@@ -1,10 +1,11 @@
+"""This module handles interactions with KMD Nova."""
 
 from datetime import datetime
 import uuid
 from io import BytesIO
 
 from itk_dev_shared_components.kmd_nova.authentication import NovaAccess
-from itk_dev_shared_components.kmd_nova.nova_objects import NovaCase, Document, CaseParty, Caseworker, Department
+from itk_dev_shared_components.kmd_nova.nova_objects import NovaCase, Document, CaseParty, Department
 from itk_dev_shared_components.kmd_nova import nova_cases, nova_documents
 from itk_dev_shared_components.kmd_nova import cpr as nova_cpr
 

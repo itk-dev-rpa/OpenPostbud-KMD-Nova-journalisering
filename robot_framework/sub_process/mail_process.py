@@ -1,3 +1,5 @@
+"""This module handles interactions with Graph and smtp."""
+
 from dataclasses import dataclass, asdict
 import json
 
