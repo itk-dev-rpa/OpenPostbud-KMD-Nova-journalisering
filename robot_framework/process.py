@@ -112,5 +112,5 @@ if __name__ == '__main__':
 
     conn_string = os.getenv("OpenOrchestratorConnString")
     crypto_key = os.getenv("OpenOrchestratorKey")
-    oc = OrchestratorConnection("OpenPostbud journalisering", conn_string, crypto_key, '{"accepted_azs": ["az123456789"]}', "")
+    oc = OrchestratorConnection("OpenPostbud journalisering", conn_string, crypto_key, '{"accepted_azs": ["az123456789"]}', "", "")
     process(oc)
