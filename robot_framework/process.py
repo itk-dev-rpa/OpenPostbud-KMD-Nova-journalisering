@@ -105,12 +105,3 @@ def handle_mail_request(email: Email, orchestrator_connection: OrchestratorConne
 
     mail_process.send_confirmation(user.email, shipment_id, len(letter_ids))
     graph_mail.delete_email(email, graph_access)
-
-
-if __name__ == '__main__':
-    import os
-
-    conn_string = os.getenv("OpenOrchestratorConnString")
-    crypto_key = os.getenv("OpenOrchestratorKey")
-    oc = OrchestratorConnection("OpenPostbud journalisering", conn_string, crypto_key, '{"accepted_azs": ["az123456789"]}', "", "")
-    process(oc)
